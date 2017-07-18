@@ -1,0 +1,28 @@
+URL: http://natas11.natas.labs.overthewire.org/
+user: natas11
+pass: U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK
+
+decryption of xor encyrpted cookie.
+We know the dictionary and we know the xor encrypted cookie, we need to get the key.
+
+with bgcolor = #00ff99 cookie is 'ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSRwgsF04BaAw%3D'
+
+if A XOR B = K then A XOR K = B
+
+$cookie = 'ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSRwgsF04BaAw%3D'
+
+$defaultdata = array( "showpassword"=>"no", "bgcolor"=>"#00ff99");
+$text = json_encode($defaultdata);
+
+$xored = base64_decode($cookie);
+$output = '';
+for($i=0;$i<strlen($text);$i++) {
+    $output .= $text[$i] ^ $xored[$i];
+}
+echo $output;  ->  qw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jqw8Jq
+
+KEY is qw8J
+
+we get the xor encrypted value for $defaultdata = array( "showpassword"=>"yes", "bgcolor"=>"#00ff99"); using the key.
+
+natas12 pass: EDXp0pS26wLKHZy1rDBPUZk0RKfLGIR3

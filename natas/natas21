@@ -1,0 +1,12 @@
+URL: http://natas21.natas.labs.overthewire.org
+user: natas21
+password: IFekPyrQXftziDEsUr3x21sYuahypdgJ
+
+Session injection.
+Session shared with http://natas21-experimenter.natas.labs.overthewire.org
+Go to http://natas21-experimenter.natas.labs.overthewire.org/index.php?debug=1&submit=1&admin=1
+That set the session 'admin' value to 1
+Go back to http://natas21.natas.labs.overthewire.org
+Use the same session ID. w00t!
+
+natas22 pass: chG9fbe1Tq2eWVMgjYYD1MsfIvN461kJ

